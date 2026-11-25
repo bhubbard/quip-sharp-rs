@@ -1,0 +1,9 @@
+[package]
+name = "quip-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Pure-Rust QuIP# 2-bit LLM quantization: Randomized Hadamard Transform, LDLQ, and E8P lattice codebook"
+
+[dependencies]
+thiserror.workspace = true

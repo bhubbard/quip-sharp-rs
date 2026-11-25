@@ -1,0 +1,15 @@
+[package]
+name = "quip-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "CLI for QuIP# 2-bit E8P quantization and benchmarking"
+
+[[bin]]
+name = "quip-sharp"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+quip-core = { path = "../quip-core" }
