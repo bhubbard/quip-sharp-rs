@@ -179,3 +179,19 @@ mod tests {
         }
     }
 }
+
+#[cfg(kani)]
+mod kani_proofs {
+    use super::*;
+
+    #[kani::proof]
+    #[kani::unwind(5)]
+    fn verify_rademacher_signs_strictly_unit() {
+        let seed: u64 = kani::any();
+        let signs = rademacher_signs(4, seed);
+        assert_eq!(signs.len(), 4);
+        for &s in &signs {
+            assert!(s == 1.0 || s == -1.0);
+        }
+    }
+}

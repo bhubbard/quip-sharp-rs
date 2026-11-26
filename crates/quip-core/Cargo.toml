@@ -7,3 +7,6 @@ description = "Pure-Rust QuIP# 2-bit LLM quantization: Randomized Hadamard Trans
 
 [dependencies]
 thiserror.workspace = true
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }
